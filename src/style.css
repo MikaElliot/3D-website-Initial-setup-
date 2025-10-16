@@ -1,0 +1,25 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body
+{
+  background: #232323;
+}
+
+.section-container
+{
+  position: relative;
+}
+
+.section-box
+{
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 68, 0, 0.174);
+  padding: 2rem;
+}
