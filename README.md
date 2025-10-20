@@ -53,7 +53,7 @@
 <pre>
 <code>
 # Clone the repository
-git clone https://github.com/MikaElliot/3D-website-Initial-setup.git
+git clone https://github.com/MikaElliot/3D-website-Initial-setup-.git
 cd 3D-website-Initial-setup
 
 # Install dependencies
