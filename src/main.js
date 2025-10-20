@@ -10,16 +10,16 @@ const cubeGeometry = new THREE.BoxGeometry(1,1,1);
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: "crimson" });
 const cubeMaterial2 = new THREE.MeshBasicMaterial({ color: "orangered" });
 const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
-const cubeMesh2 = new THREE.Mesh(cubeGeometry, cubeMaterial2);
-const cubeMesh3 = new THREE.Mesh(cubeGeometry, cubeMaterial);
+const platFormMesh = new THREE.Mesh(cubeGeometry, cubeMaterial2);
+
 //:::::::::::: Position ::::::::::::
 const tempVector = new THREE.Vector3(1,1,1);
 cubeMesh.position.set(0,.2,0);
-cubeMesh2.position.set(0,.325,0)
+platFormMesh.position.set(0,.325,0);
 
 //:::::::::::: Scale ::::::::::::
 cubeMesh.scale.set(1,0,1);
-cubeMesh2.scale.set(.25,.25,.25)
+platFormMesh.scale.set(.25,.25,.25);
 
 const fog = new THREE.Fog("#232323", 1 ,2);
 scene.fog = fog
@@ -30,7 +30,7 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 camera.position.copy(tempVector);
 
 const axeHelper = new THREE.AxesHelper();
-scene.add(camera, cubeMesh, cubeMesh2);
+scene.add(camera, cubeMesh, platFormMesh);
 
 //:::::::::::::::::: Render (scene, camera) :::::::::::::::::
 const canvas = document.querySelector('#three');
@@ -55,6 +55,7 @@ window.addEventListener('resize', () => {
 //::::::::::::::::::: Orbit Controls :::::::::::::::::::
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
+controls.autoRotate = true;
 const clock = new THREE.Clock();
 let previousTime = 0;
 
@@ -62,7 +63,10 @@ const renderloop = () => {
   const currentTime = clock.getElapsedTime();
   const delta = currentTime - previousTime
   previousTime = currentTime;
-  cubeMesh.rotation.y += THREE.MathUtils.degToRad(1) * delta * 4;
+
+  //:::::::::::: Animation for cubeMesh and platFormMesh :::::::::::::
+  // cubeMesh.rotation.y += THREE.MathUtils.degToRad(5) * delta * 4;
+  // platFormMesh.rotation.y += THREE.MathUtils.degToRad(15) * delta * 4;
 
   controls.update();
   renderer.render(scene, camera);
