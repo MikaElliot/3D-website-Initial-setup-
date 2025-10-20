@@ -5,6 +5,7 @@ import createScene from './basic/scene.js'
 import createCameraAndLight from './basic/camera-light.js';
 import initRenderer from './basic/renderer.js';
 
+//::::::::::::::::::: Scene, Camera, Light, Renderer :::::::::::::::::::
 const { scene, cubeMesh, platFormMesh } = createScene();
 const { camera, pointLight, ambientLight } = createCameraAndLight();
 const { renderer, canvas } = initRenderer();
