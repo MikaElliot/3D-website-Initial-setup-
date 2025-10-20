@@ -97,10 +97,7 @@ npm run dev
 <hr>
 
 <h2>📸 Preview</h2>
-<p><em>(Add an image or GIF preview of your 3D scene here)</em></p>
-<pre>
-<code>![3D Scene Preview](./preview.png)</code>
-</pre>
+<img src="/src/img/3D.png" alt="project overview" />
 
 <hr>
 
