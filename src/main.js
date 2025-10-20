@@ -9,7 +9,7 @@ const { scene, cubeMesh, platFormMesh } = createScene();
 const { camera, pointLight, ambientLight } = createCameraAndLight();
 const { renderer, canvas } = initRenderer();
 
-scene.add(camera, cubeMesh, platFormMesh, ambientLight, pointLight );
+scene.add(camera, cubeMesh, platFormMesh, ambientLight, pointLight);
 
 //::::::::::::::::::: Orbit Controls :::::::::::::::::::
 const controls = new OrbitControls(camera, canvas);
@@ -18,6 +18,7 @@ controls.autoRotate = true;
 const clock = new THREE.Clock();
 let previousTime = 0;
 
+//::::::::::::::::::: Render Loop :::::::::::::::::::
 const renderloop = () => {
   const currentTime = clock.getElapsedTime();
   const delta = currentTime - previousTime
@@ -32,3 +33,10 @@ const renderloop = () => {
   window.requestAnimationFrame(renderloop);
 }
 renderloop();
+
+//::::::::::::::::: Responsive :::::::::::::::::::
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});

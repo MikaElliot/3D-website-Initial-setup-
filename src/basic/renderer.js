@@ -11,13 +11,6 @@ export default function initRenderer() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(2);
 
-  //::::::::::::::::: Responsive :::::::::::::::::::
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
-
   return {
     renderer,
     canvas
