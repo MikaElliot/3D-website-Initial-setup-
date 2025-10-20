@@ -19,10 +19,23 @@ body
 
 .title
 {
-  color: aliceblue;
+  color: orangered;
+  text-align: center;
 }
 
 .paragraph
 {
+  width: 60%;
   color: rgb(168, 169, 170);
+  text-align: center;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px)
+{
+  .paragraph
+  {
+    width: 100%;
+    font-size: 0.9rem;
+  }
 }
