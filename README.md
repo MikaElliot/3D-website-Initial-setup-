@@ -1,4 +1,4 @@
-<h1>🌐 3D Scene with Three.js — Quick start with basic features</h1>
+<h1>🌐 3D with Three.js — Quick start with basic features</h1>
 
 <h2>🧭 Project Overview</h2>
 <p>
