@@ -1,4 +1,4 @@
-<h1>🌐 3D Scene with Three.js — Basic Setup & Interactive Controls</h1>
+<h1>🌐 3D Scene with Three.js — Quick start with basic features</h1>
 
 <h2>🧭 Project Overview</h2>
 <p>
@@ -53,8 +53,8 @@
 <pre>
 <code>
 # Clone the repository
-git clone https://github.com/MikaElliot/3D-website-Initial-setup.git
-cd 3D-website-Initial-setup
+git clone https://github.com/MikaElliot/3D-website-quick-start-.git
+cd 3D-website-quick-start-
 
 # Install dependencies
 npm install
