@@ -10,7 +10,12 @@ export default function createScene()
   const cubeGeometry = new THREE.BoxGeometry(1,1,1);
   const cubeMaterial = new THREE.MeshBasicMaterial({ color: "crimson" });
   const cubeMaterial2 = new THREE.MeshBasicMaterial({ color: "orangered" });
+  const SphereGeometry = new THREE.SphereGeometry(1,32,32);
+  const sphereMaterial = new THREE.MeshBasicMaterial({color: "#fefefe"});
+
+  const sphereMesh = new THREE.Mesh(SphereGeometry, sphereMaterial);
   const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
+
   const platFormMesh = new THREE.Mesh(cubeGeometry, cubeMaterial2);
   
   //:::::::::::: Position ::::::::::::
@@ -19,9 +24,10 @@ export default function createScene()
   
   //:::::::::::: Scale ::::::::::::
   cubeMesh.scale.set(1,0,1);
+  sphereMesh.scale.set(.25,.25,.25);
   platFormMesh.scale.set(.25,.25,.25);
   
-  const fog = new THREE.Fog("#232323", 1 ,2);
+  const fog = new THREE.Fog("#232323", 1 ,3);
   scene.fog = fog
   
   scene.background = new THREE.Color("#232323");
@@ -29,6 +35,7 @@ export default function createScene()
   return {
     scene,
     cubeMesh,
+    sphereMesh,
     platFormMesh,
   }
 }

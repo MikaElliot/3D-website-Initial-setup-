@@ -1,16 +1,35 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/examples/jsm/Addons.js';
+import { DRACOLoader } from 'three/examples/jsm/Addons.js';
 import createScene from './basic/scene.js'
 import createCameraAndLight from './basic/camera-light.js';
 import initRenderer from './basic/renderer.js';
 
 //::::::::::::::::::: Scene, Camera, Light, Renderer :::::::::::::::::::
-const { scene, cubeMesh, platFormMesh } = createScene();
+const { scene, cubeMesh, sphereMesh, platFormMesh } = createScene();
 const { camera, pointLight, ambientLight } = createCameraAndLight();
 const { renderer, canvas } = initRenderer();
 
-scene.add(camera, cubeMesh, platFormMesh, ambientLight, pointLight);
+scene.add(camera, cubeMesh, platFormMesh, sphereMesh, ambientLight, pointLight);
+
+const loader = new GLTFLoader();
+const dracoloader = new DRACOLoader();
+
+dracoloader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+loader.setDRACOLoader(dracoloader);
+
+loader.load('/src/assets/models/model.glb', function(gltf){
+  const model = gltf.scene;
+  model.scale.set(0.15,0.15,0.15);
+  model.position.set(0.25,0.5,0.6);
+  model.rotation.set(0,Math.PI/2,0);
+  scene.add(model);
+});
+
+console.log(scene);
+
 
 //::::::::::::::::::: Orbit Controls :::::::::::::::::::
 const controls = new OrbitControls(camera, canvas);
