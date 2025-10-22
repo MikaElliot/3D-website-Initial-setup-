@@ -10,6 +10,8 @@ export default function createCameraAndLight()
   const ambiantLight = new THREE.AmbientLight(0xffffff, 0.9);
   const pointLight = new THREE.PointLight(0xffffff, 1);
 
+  pointLight.position.set(0,.25,0);
+
   return {
     camera,
     ambiantLight,

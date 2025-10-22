@@ -1,9 +1,15 @@
+@font-face {
+  font-family: 'poppins';
+  src: url('/src/assets/font/Poppins-Regular.ttf');
+}
+
 *
 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
+  font-family: poppins;
 }
 
 body
@@ -11,15 +17,25 @@ body
   background: #232323;
 }
 
-.title-container
+body:is(.loading)
+{
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar
+{
+  display: none;
+}
+
+.header-container
 {
   position: absolute;
   padding: 2rem 1rem;
 }
 
-.title
+.header-container h1
 {
-  color: orangered;
+  color: rgb(255, 251, 250);
   text-align: center;
 }
 
@@ -31,11 +47,96 @@ body
   margin: auto;
 }
 
+.about
+{
+  position: absolute;
+  padding: 2rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.about-content
+{
+  padding: 1rem;
+  background: rgba(243, 237, 235, 0.074);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.about-content h2
+{
+  color: rgb(252, 84, 42);
+  margin-bottom: 1rem;
+}
+
+.about-content .main-description,
+.about-content .ui-description
+{
+  color: rgb(168, 169, 170);
+  line-height: 1.5rem;
+}
+
+@media screen and (max-width: 1024px)
+{
+  .about-content
+  {
+    flex-direction: column;
+    gap: 1rem;
+  } 
+}
+
 @media screen and (max-width: 768px)
 {
+  .header-container
+  {
+    padding: 1rem 0.5rem;
+  }
+
   .paragraph
   {
     width: 100%;
     font-size: 0.9rem;
+  }
+
+  .about
+  {
+    padding: 0.5rem;
+  }
+
+  .about-content
+  {
+    text-align: center;
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .about-content h2
+  {
+    font-size: 1rem;
+    margin-bottom: .25rem;
+  }
+
+  .about-content .main-description
+  {
+    display: none;
+  }
+
+  .about-content .ui-description
+  {
+    grid-column: span 2;
+    font-size: 0.8rem;
+  }
+
+  .about-content img
+  {
+    width: 20%;
+    margin: auto;
   }
 }
