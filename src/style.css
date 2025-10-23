@@ -27,6 +27,11 @@ body::-webkit-scrollbar
   display: none;
 }
 
+.author
+{
+  color: rgb(252, 84, 42);
+}
+
 .header-container
 {
   position: absolute;
