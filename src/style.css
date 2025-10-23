@@ -70,6 +70,7 @@ body::-webkit-scrollbar
 
 .about-content h2
 {
+  font-size: 1.25rem;
   color: rgb(252, 84, 42);
   margin-bottom: 1rem;
 }
@@ -79,6 +80,14 @@ body::-webkit-scrollbar
 {
   color: rgb(168, 169, 170);
   line-height: 1.5rem;
+}
+
+@media screen and (min-width: 1024px)
+{
+  .about-content .ui-description
+  {
+    display: none;
+  } 
 }
 
 @media screen and (max-width: 1024px)

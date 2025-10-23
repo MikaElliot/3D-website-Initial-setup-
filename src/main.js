@@ -20,11 +20,11 @@ const dracoloader = new DRACOLoader();
 dracoloader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
 loader.setDRACOLoader(dracoloader);
 
-loader.load('/src/assets/models/car.glb', function(gltf){
+loader.load('/models/car.glb', async (gltf) => {
   const model = gltf.scene;
-  model.scale.set(0.15,0.15,0.15);
-  model.position.set(0.25,0.5,0.6);
-  model.rotation.set(0,Math.PI/2,0);
+  model.scale.set(0.15, 0.15, 0.15);
+  model.position.set(0.25, 0.5, 0.6);
+  model.rotation.set(0, Math.PI / 2, 0);
   scene.add(model);
 });
 
@@ -32,7 +32,10 @@ loader.load('/src/assets/models/car.glb', function(gltf){
 //::::::::::::::::::: Orbit Controls :::::::::::::::::::
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
-controls.autoRotate = true;
+setTimeout(() => {
+  controls.autoRotate = true;
+}, 5000);
+
 const clock = new THREE.Clock();
 let previousTime = 0;
 
