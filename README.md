@@ -97,7 +97,7 @@ npm run dev
 <hr>
 
 <h2>📸 Preview</h2>
-<img src="/src/assets/img/3D.png" alt="project overview" />
+<img src="/public/img/3D.png" alt="project overview" />
 
 <hr>
 
