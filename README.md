@@ -1,4 +1,4 @@
-<h1>🌐 3D Scene with Three.js — Quick start with basic features</h1>
+<h1>🌐 3D with Three.js — Quick start with basic features</h1>
 
 <h2>🧭 Project Overview</h2>
 <p>
@@ -97,7 +97,7 @@ npm run dev
 <hr>
 
 <h2>📸 Preview</h2>
-<img src="/src/img/3D.png" alt="project overview" />
+<img src="/src/assets/img/3D.png" alt="project overview" />
 
 <hr>
 
